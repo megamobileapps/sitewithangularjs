@@ -1,0 +1,30 @@
+.vertical-text {
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+}
+.null-bottom-margin{
+    margin-bottom: 0;
+}
+.null-right-margin{
+    margin-right: 0;
+}
+.null-left-margin{
+    margin-left: 0;
+}
+.null-top-margin{
+    margin-top: 0;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.header {
+	background:#00ff00;
+}
+.rate-menu {
+	background:yellow;
+}
+.footer .navbar ul li{
+    display:inline-block;
+}
+
