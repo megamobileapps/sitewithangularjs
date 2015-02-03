@@ -1,9 +1,9 @@
-<html lang="en" data-ng-app="">
+<html lang="en" data-ng-app="utswApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Test Slider for subjects </title>
+        <title>UpToSchoolWorksheets</title>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.css">
@@ -25,9 +25,7 @@
 				<ng-include src="'templates/header.html'" class=""></ng-include>
 			</div>
 			<div class="row">
-				<ng-include src="'templates/leftmenu.html'" class=""></ng-include>
-				<ng-include src="'templates/middlecontent.html'" class=""></ng-include>
-				<ng-include src="'templates/rightmenu.html'" class=""></ng-include>
+				<ng-include src="'templates/storeshelf.html'" class=""></ng-include>
 			</div>
 			<div class="row" >
 				<ng-include src="'templates/footer.html'" class=""></ng-include>
@@ -41,5 +39,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/configs.js"></script>
+        <script src="scripts/controllers.js"></script>
+        <script src="scripts/shoppingcart.js"></script>
+        <script src="scripts/factory.js"></script>
+        <script src="scripts/directive.js"></script>
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://apis.google.com/js/client:platform.js?onload=gplusrender" async defer></script>
     </body>
 </html>

@@ -1,6 +1,5 @@
 <!-- This is the partial view to show cart items details for each grade-->
 
- <div class="table">
      <div class="row">
         <div ng-repeat="subject in currentSubjectData|filter:selectedItem">
             
@@ -8,37 +7,14 @@
 
                 <div class="panel-heading">
                      <a ng-href="{{subject.url}}">{{subject.name}}</a>
+					<br/>
+                     <img ng-src="{{subject.img}}" height="25%">
                 </div>
                 
                 <div class="panel-body">
-                    <div class="col-md-2">
-                         
-                         <img ng-src="{{subject.img}}" height="25%">
-                     </div>
-                      <div class="col-md-1">
                            <p>{{subject.description}}.
                              </p>
-                        </div>
-                     <div class="col-md-4">
-                        <ul class="list-group">
-                          <li  ng-if="subject.cost1" class="btn btn-primary list-group-item" 
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost1, 1, 'online-1M')"
-                              >1 Month Rate: {{subject.cost1|currency:"Rupees "}} Add To Cart</li>
-                          <li  ng-if="subject.cost3" class="btn btn-primary list-group-item" 
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost3, 1, 'online-3M')"
-                              >3 Month Rate: {{subject.cost3|currency:"Rupees "}} Add To Cart</li>
-                          <li  ng-if="subject.cost6" class="btn btn-primary  list-group-item"
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost6, 1, 'online-6M')"
-                              >6 Month Rate: {{subject.cost6|currency:"Rupees "}} Add To Cart</li>
-                          <li ng-if="subject.cost" class="btn btn-primary  list-group-item"
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost, 1, 'online-12M')"
-                              >1 Year Rate: {{subject.cost|currency:"Rupees "}} Add To Cart</li>
-                          <li ng-if="subject.hasprintrate" class="btn btn-primary  list-group-item"
-                              ng-click="cart.addItem(subject.G1Allv211010, subject.name, subject.costp, 1, 'printed')"
-                              >Printed Copy Rate:{{subject.costp|currency:"Rupees "}} Add To Cart</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-3">
+						<div class="ng-include" src="'views/cartitemprice.html'"></div>
                          <div class="well">
                               <a ng-href="#/cart" title="go to shopping cart"
                                  ng-disabled="cart.getTotalCount() < 1">
@@ -72,9 +48,7 @@
                                       alt="checkoutFacebook"/>
                                 </button>
                             </p>
-                    </div>
+                    </div><!-- panel-body -->
                  </div>
             </div>
          </div>
-     </div>
- </div>

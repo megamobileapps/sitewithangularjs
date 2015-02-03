@@ -1,0 +1,27 @@
+<div class="row" ng-controller="SimpleController">
+	<div class="col-sm-10">
+		<div role="tabpanel">
+			<div class="col-xs-2">
+				<ul class="nav nav-tabs nav-stacked navbar-inverse" role="tablist">
+				  <li ng-class="{active:storeItem.isselected=='active'}" data-ng-repeat="storeItem in storeItems">
+					  <a ng-click="tabselect = storeItem.gradename" data-toggle="tab"   href="#{{storeItem.gradename}}">{{storeItem.gradename}}</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="col-xs-10">
+				<div class="tab-content">
+					   <div ng-repeat="storeItem in storeItems" 
+						   ng-class="{'active':'tab-pane fade in active', '':'tab-pane fade'}[storeItem.isselected]" 
+						   id="{{storeItem.gradename}}" 
+							role="tabpanel">
+							<cart-item-tab-data> </cart-item-tab-data>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-2">
+		<div data-ng-view="">
+		</div>
+	</div>
+</div>

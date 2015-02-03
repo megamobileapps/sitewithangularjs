@@ -1,0 +1,10 @@
+                          <p  ng-if="subject.cost1" class="text-nowrap" 
+                              ><small>1 M: {{subject.cost1|currency:"Rs "}}</small></p>
+                          <p  ng-if="subject.cost3" class="text-nowrap" 
+                              ><small>3 M: {{subject.cost3|currency:"Rs "}}</small></p>
+                          <p  ng-if="subject.cost6" class="text-nowrap "
+                              ><small>6 M: {{subject.cost6|currency:"Rs "}}</small></p>
+                          <p ng-if="subject.cost" class="text-nowrap "
+                              ><small>1 Yr: {{subject.cost|currency:"Rs "}}</small></p>
+                          <p ng-if="subject.hasprintrate" class="text-nowrap "
+                              ><small>Printed:{{subject.costp|currency:"Rs "}}</small></p>

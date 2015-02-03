@@ -9,18 +9,27 @@
    <div class="panel-body">
        <p>{{storeItem.gradedescription}}</p>
        <div ng-repeat="subject in storeItem.subjects|filter:selectedItem" 
-			ng-class="{row:!($index%4)}">
-               <div class="col-md-3">
+			ng-class="{row:!($index%3)}">
+               <div class="col-md-4">
                    <div class="panel panel-default">
                             <div class="panel-heading">
-                                 <a ng-href="{{subject.url}}">{{subject.name}}</a>
+								<div class="row">
+               						<div class="col-sm-5">
+                                 		<a ng-href="{{subject.url}}">{{subject.name}}</a><br/>
+                                 		<a ng-href="#cartitemdetail/{{storeItem.gradename}}/{{subject.name}}">
+                                     		<img ng-src="{{subject.img}}"  height="13%">
+                                		</a>
+									</div>
+               						<div class="col-sm-7">
+                                 		<a ng-href="#cartitemdetail/{{storeItem.gradename}}/{{subject.name}}">
+											<div class="ng-include" src="'views/cartitempricebrief.html'"></div>
+										</a>
+									</div>
+								</div>
                             </div>
                             <div class="panel-body">
                                  <p>{{subject.description}}.
                                  </p>
-                                 <a ng-href="#cartitemdetail/{{storeItem.gradename}}/{{subject.name}}">
-                                     <img ng-src="{{subject.img}}"  height="20%">
-                                </a>
                            </div>
                   </div>
               </div>
