@@ -1,54 +1,81 @@
 <!-- This is the partial view to show cart items details for each grade-->
-
-     <div class="row">
-        <div ng-repeat="subject in currentSubjectData|filter:selectedItem">
-            
-             <div class="panel panel-default">
-
-                <div class="panel-heading">
-                     <a ng-href="{{subject.url}}">{{subject.name}}</a>
-					<br/>
-                     <img ng-src="{{subject.img}}" height="25%">
-                </div>
-                
-                <div class="panel-body">
-                           <p>{{subject.description}}.
-                             </p>
-						<div class="ng-include" src="'views/cartitemprice.html'"></div>
-                         <div class="well">
-                              <a ng-href="#/cart" title="go to shopping cart"
-                                 ng-disabled="cart.getTotalCount() < 1">
-                                 <i class="icon-shopping-cart" />
-                                 <b>{{cart.getTotalCount()}}</b> items,
-                                 <b>{{cart.getTotalPrice() | currency:"Rupees "}}</b>
-                              </a>
-                           
-                          </div>
-                          <p class="text-info">
-                                <button 
-                                    class="btn btn-block btn-danger" 
-                                    ng-click="cart.clearItems()" 
-                                    ng-disabled="cart.getTotalCount() < 1" >
-                                    <i class="icon-trash icon-white" /> clear cart
-                                </button>
-                                <button 
-                                    class="btn btn-block btn-link"
-                                    ng-click="cart.checkout('Paypal',false)"
-                                    ng-disabled="cart.getTotalCount() < 1" >
-                                    <img
-                                      src=https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif
-                                      alt="checkout PayPal"/>
-                                </button>
-                                <button 
-                                    class="btn btn-block btn-link" 
-                                    ng-click="cart.checkout('Facebook',false)" 
-                                    ng-disabled="cart.getTotalCount() < 1" >
-                                    <img
-                                      src=https://checkout.google.com/buttons/checkout.gif 
-                                      alt="checkoutFacebook"/>
-                                </button>
-                            </p>
-                    </div><!-- panel-body -->
-                 </div>
-            </div>
-         </div>
+ <div ng-repeat="subject in currentSubjectData">
+<div class="row">
+	<div class="col-sm-6 ">
+		<h3 class="text-success bg-info text-center">Subject Details for {{subject.name}}</h3>
+		<a ng-href="{{subject.url}}">{{subject.name}}</a>
+		<br/>
+		<img ng-src="{{subject.img}}" height="25%">
+        <p>{{subject.description}}.  </p>
+	</div>
+	<div class="col-sm-6 ">
+		<h3 class="text-success bg-info text-center">Subject Topics</h3>
+		<ul >
+			<li ng-repeat="topic in topics">{{topic.name}} </li> 
+		</ul>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6 ">
+		<h3 class="text-success bg-info text-center">Free Worksheets</h3>
+		<ul> 
+			<li ng-repeat="ws in freeWsList"> {{ws.name}}</li>
+		</ul>
+	</div>
+	<div class="col-sm-6 ">
+		<h3 class="text-success bg-info text-center"> What are our Customers Saying </h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<h3 class="bg-danger text-center">Price List</h3>
+		<div class="ng-include" src="'views/cartitemprice.html'"></div>
+	</div>
+	<div class="col-sm-6">
+		<h3 class="text-center bg-danger">Shopping Cart</h3>
+		<div class="row">
+			<div class="col-sm-6">
+          		<a ng-disabled="cart.getTotalCount() < 1" href="#" 
+				   data-toggle="modal" data-target="#shoppingModal">
+					<span class="glyphicon glyphicon-shopping-cart btn btn-info btn-md">
+                 		(<b>{{cart.getTotalCount()}}</b> items,<br/>
+                 		<b>{{cart.getTotalPrice() | currency:"Rs "}}</b>)
+					</span>
+				</a> 
+			</div>
+			<div class="col-sm-6">
+                <button 
+                    class="btn btn-block btn-danger" 
+                    ng-click="cart.clearItems()" 
+                    ng-disabled="cart.getTotalCount() < 1" >
+                    <i class="icon-trash icon-white" />clear cart
+                </button>
+                <button 
+                    class="btn btn-block btn-link"
+                    ng-click="cart.checkout('Paypal',false)"
+                    ng-disabled="cart.getTotalCount() < 1" >
+                    <img
+                      src=https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif
+                      alt="checkout PayPal">
+                </button>
+                <button 
+                    class="btn btn-block btn-link" 
+                    ng-click="cart.checkout('Facebook',false)" 
+                    ng-disabled="cart.getTotalCount() < 1" >
+                    <img
+                      src=https://checkout.google.com/buttons/checkout.gif 
+                      alt="checkoutFacebook">
+                </button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<h3 class="text-center bg-success"> Related Subjects</h3>
+			<div class="col-sm-3 pull-left" ng-repeat="subject in relatedSubjects">
+				<div class="ng-include" src="'views/subjectdetails.html'"></div>
+			</div>
+	<div>
+</div>
+</div>

@@ -1,10 +1,16 @@
-<div class="row" ng-controller="SimpleController">
+<div class="row">
 	<div class="col-sm-10">
 		<div role="tabpanel">
 			<div class="col-xs-2">
 				<ul class="nav nav-tabs nav-stacked navbar-inverse" role="tablist">
-				  <li ng-class="{active:storeItem.isselected=='active'}" data-ng-repeat="storeItem in storeItems">
-					  <a ng-click="tabselect = storeItem.gradename" data-toggle="tab"   href="#{{storeItem.gradename}}">{{storeItem.gradename}}</a>
+				  <li data-ng-repeat="storeItem in storeItems" 
+					ng-class="{active:storeItem.isselected=='active'}"  >
+					  	<a ng-click="tabselect = storeItem.gradename" role="tab" 
+							data-toggle="tab"  
+							target="{'_blank':active:storeItem.isselected=='active'}" 
+							 aria-controls="{{storeItem.gradename}}" 
+							href="#{{storeItem.gradename}}">{{storeItem.gradename}}
+					  	</a>
 				  </li>
 				</ul>
 			</div>
@@ -21,7 +27,6 @@
 		</div>
 	</div>
 	<div class="col-sm-2">
-		<div data-ng-view="">
-		</div>
+		<h1> Area for advertisements</h1>
 	</div>
 </div>

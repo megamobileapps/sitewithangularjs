@@ -1,10 +1,19 @@
-                          <p  ng-if="subject.cost1" class="text-nowrap" 
-                              ><small>1 M: {{subject.cost1|currency:"Rs "}}</small></p>
-                          <p  ng-if="subject.cost3" class="text-nowrap" 
-                              ><small>3 M: {{subject.cost3|currency:"Rs "}}</small></p>
-                          <p  ng-if="subject.cost6" class="text-nowrap "
-                              ><small>6 M: {{subject.cost6|currency:"Rs "}}</small></p>
-                          <p ng-if="subject.cost" class="text-nowrap "
-                              ><small>1 Yr: {{subject.cost|currency:"Rs "}}</small></p>
-                          <p ng-if="subject.hasprintrate" class="text-nowrap "
-                              ><small>Printed:{{subject.costp|currency:"Rs "}}</small></p>
+<div class="row success" ng-if="subject.cost1">
+	<div  ng-if="subject.cost1" class="col-xs-4 text-nowrap price-item-brief label label-success" >
+		1 Month <br/>{{subject.cost1|currency:"Rs ":0}}
+	</div>
+	<div  ng-if="subject.cost3" class="col-xs-4 text-nowrap price-item-brief label label-success">
+		3 Month: <br/>{{subject.cost3|currency:"Rs ":0}}
+	</div>
+	<div  ng-if="subject.cost6" class="col-xs-4 text-nowrap price-item-brief label label-success ">
+		6 Month: <br/>{{subject.cost6|currency:"Rs ":0}}
+	</div>
+</div>
+<div class="row success" ng-if="subject.costp">
+	<div ng-if="subject.cost" class="col-xs-4 text-nowrap price-item-brief  label label-success">
+		1 Year: <br/>{{subject.cost|currency:"Rs ":0}}
+	</div>
+	<div ng-if="subject.hasprintrate" class="col-xs-4 text-nowrap price-item-brief label label-danger ">
+		Printed:<br/>{{subject.costp|currency:"Rs ":0}}
+	</div>
+</div>

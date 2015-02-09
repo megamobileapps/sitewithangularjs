@@ -19,7 +19,6 @@
    margin: 0 !important;
 }
 .header {
-	background:#00ff00;
 }
 .rate-menu {
 	background:yellow;
@@ -27,4 +26,9 @@
 .footer .navbar ul li{
     display:inline-block;
 }
-
+.price-item-brief{
+	line-height:1.0;
+	font-size:0.9em;
+	height: 32px; 
+	overflow:auto;
+}

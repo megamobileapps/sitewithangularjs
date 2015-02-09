@@ -1,4 +1,5 @@
 <script type="text/ng-template" id="templates/menu1.html">
+	<div class="ng-include" src="'views/login-modal.html'"></div> 
 	<div class="nav navbar navbar-inverse null-bottom-margin" role="navigation"> 
        <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar-header-1">
@@ -10,10 +11,16 @@
           </button>
 			<ul class="nav pull-left">
 				<!-- This works well for static text, like a username -->
-				<li class="navbar-text pull-left">User Name{{username}}</li>
+				<li ng-if="username" class="navbar-text pull-left">{{username}}</li>
+				<li ng-if="!username" class="navbar-text pull-left">
+				<a href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+				</li>
 				<!-- Add any additional bootstrap header items.  This is a drop-down from an icon -->
 				<li class="dropdown pull-right">
-				  <a href="#" data-toggle="dropdown" style="color:#777; margin-top: 5px;" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span><b class="caret"></b></a>
+				  <a href="#" data-toggle="dropdown" style="color:#777; margin-top: 5px;" 
+					class="dropdown-toggle">
+					<span class="glyphicon glyphicon-user"></span><b class="caret"></b>
+				  </a>
 				  <ul class="dropdown-menu">
 					<li>
 					  <a ng-href="#/users/id/worksheets" title="worksheets">MyWorksheets</a>
@@ -54,10 +61,13 @@
     				<li class="navbar-text pull-left">Worksheets</li>
     				<!-- Add any additional bootstrap header items.  This is a drop-down from an icon -->
     				<li class="dropdown pull-right">
-    				  <a href="#" data-toggle="dropdown" style="color:#777; margin-top: 5px;" class="dropdown-toggle"><span class="glyphicon glyphicon-folder-open"></span><b class="caret"></b></a>
+    				  <a href="#" data-toggle="dropdown" style="color:#777; margin-top: 5px;" 
+						class="dropdown-toggle">
+						<span class="glyphicon glyphicon-folder-open"></span><b class="caret"></b>
+					  </a>
     				  <ul class="dropdown-menu">
     					<li>
-    					  <a ng-href="#/shoppin" title="worksheet shopping">Shop</a>
+    					  <a ng-href="#/shopping" title="worksheet shopping">Shop</a>
     					</li>
     					<li>
     					  <a ng-href="#/samples" title="worksheet samples">Samples</a>
@@ -78,21 +88,27 @@
         <!-- /.navbar-collapse --> 
     </div>
 </script>
-	<div class="col-lg-2 col-xs-2"> 
-		<img src="http://www.uptoschoolworksheets.com/in/images/starlogo2.png"><br > <span >Little brains <br> ...thinking big </span>
-	</div>
-	<div class="col-lg-2 col-xs-1 col-xs-offset-2 col-lg-offset-0">
-		<h1 class="visible-md visible-lg "> UpToSchool Worksheets</h1>
-		<h3 class="visible-xs vertical-text visible-sm"> UpToSchool Worksheets</h3>
-	</div>
-	<div class="col-lg-6 col-lg-offset-2 col-xs-7">
-			<div class="row" style="background-color:red;">
-				<ng-include src="'templates/menu1.html'" class="pull-right"></ng-include>
-			</div>
-			<div class="row" style="background-color:yellow;">
+<div class="row">
+    <div class="col-lg-2 col-xs-2"> 
+    	<img src="http://www.uptoschoolworksheets.com/in/images/starlogo2.png"><br > 
+    	<span >Little brains <br> ...thinking big </span>
+    </div>
+    <div class="col-lg-2 col-xs-1 col-xs-offset-2 col-lg-offset-0">
+    		<h1 class="visible-md visible-lg "> UpToSchool Worksheets</h1>
+    		<h3 class="visible-xs vertical-text visible-sm"> UpToSchool Worksheets</h3>
+    </div>
+    <div class="col-lg-6 col-lg-offset-2 col-xs-7">
+    	<div class="row" style="background-color:red;">
+    		<ng-include src="'templates/menu1.html'" class="pull-right"></ng-include>
+    	</div>
+    	<div class="row" style="background-color:yellow;">
             <ng-include class="pull-right" src="'templates/search.html'"></ng-include>
-			</div>
-			<div class="row" style="background-color:purple;">
-				<ng-include src="'templates/menu2.html'" class="pull-right"></ng-include>
-			</div>
-	</div> <!-- col-8 -->
+    	</div>
+    	<div class="row" style="background-color:purple;">
+    		<ng-include src="'templates/menu2.html'" class="pull-right"></ng-include>
+    	</div>
+    </div> <!-- col-8 -->
+</div>
+<div class="row">
+	<div data-ng-view=""  onload="onViewLoad()"> </div>
+</div>

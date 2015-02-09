@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+   	<div class="panel-heading">
+    	<a ng-href="{{subject.url}}" class="block-center">{{subject.name}}</a><br/>
+	</div>
+	<div class="panel-body">
+		<a ng-href="#/cartitemdetail/{{currrentSubjectItem.gradeName}}/{{subject.name}}">
+    		<img ng-src="{{subject.img}}"  width="100%">
+			<div class="label label-primary strong hidden-xs hidden-sm text-center">Click for Details</div>
+    	</a>
+		<div class="ng-include" src="'views/cartitempricebrief.html'"></div>
+	</div>
+</div>

@@ -1,27 +1,27 @@
-                        <ul class="list-group">
-                          <li  ng-if="subject.cost1" class="btn btn-primary list-group-item" 
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost1, 1, 'online-1M')"
-                              >1 Month: {{subject.cost1|currency:"Rs "}}</li>
-                          <li  ng-if="subject.cost3" class="btn btn-primary list-group-item" 
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost3, 1, 'online-3M')"
-                              >3 Month: {{subject.cost3|currency:"Rs "}}</li>
-                          <li  ng-if="subject.cost6" class="btn btn-primary  list-group-item"
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost6, 1, 'online-6M')"
-                              >6 Month: {{subject.cost6|currency:"Rs "}}</li>
-                          <li ng-if="subject.cost" class="btn btn-primary  list-group-item"
-                              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost, 1, 'online-12M')"
-                              >1 Year: {{subject.cost|currency:"Rs "}}</li>
-                          <li ng-if="subject.hasprintrate" class="btn btn-primary  list-group-item"
-                              ng-click="cart.addItem(subject.buycodep, subject.name, subject.costp, 1, 'printed')"
-                              >Printed:{{subject.costp|currency:"Rs "}}</li>
-						<li  class="btn btn-primary  list-group-item" >
-                              <a ng-href="#/cart" title="go to shopping cart"
-                                 ng-disabled="cart.getTotalCount() < 1"
-								 style="background-color:white;"
-								>Cart
-                                 <i class="icon-shopping-cart" />
-                                 <b>{{cart.getTotalCount()}}</b> items,<br />
-                                 <b>{{cart.getTotalPrice() | currency:"Rs "}}</b>
-                              </a>
-						</li>
-                        </ul>
+<div class="row">
+    <div class="col-sm-6">
+        <p class="text-info"> Online Access</p>
+        <ul class="list-group">
+        	<li  ng-if="subject.cost1" class="btn btn-primary list-group-item" 
+              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost1, 1, 'online-1M')"
+              >1 Month: {{subject.cost1|currency:"Rs "}}</li>
+         	<li  ng-if="subject.cost3" class="btn btn-primary list-group-item" 
+              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost3, 1, 'online-3M')"
+              >3 Month: {{subject.cost3|currency:"Rs "}}</li>
+         	<li  ng-if="subject.cost6" class="btn btn-primary  list-group-item"
+              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost6, 1, 'online-6M')"
+              >6 Month: {{subject.cost6|currency:"Rs "}}</li>
+         	<li ng-if="subject.cost" class="btn btn-primary  list-group-item"
+              ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost, 1, 'online-12M')"
+              >1 Year: {{subject.cost|currency:"Rs "}}</li>
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <p class="text-info"> Printed Worksheet</p>
+        <ul class="list-group">
+        	<li ng-if="subject.hasprintrate" class="btn btn-primary  list-group-item"
+              ng-click="cart.addItem(subject.buycodep, subject.name, subject.costp, 1, 'printed')"
+              >Printed:{{subject.costp|currency:"Rs "}}</li>
+        </ul>
+    </div>
+</div>

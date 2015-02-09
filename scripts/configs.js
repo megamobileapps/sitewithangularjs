@@ -3,22 +3,26 @@ utswApp.config(function($routeProvider) {
         .when("/",
               {
                 templateUrl:"views/viewmain.html",
-                controller:"SimpleController"
+                controller:"MainController"
             })
          .when("/add",
               {
                 templateUrl:"views/viewadd.html",
-                controller:"SimpleController"
+                controller:"MainController"
             })
         .when("/help", 
               {
                 templateUrl:"views/viewhelp.html",
-                controller:"SimpleController"
+                controller:"MainController"
+               })
+        .when("/samples", 
+              {
+                templateUrl:"views/viewsample.html"
                })
         .when("/signin", 
               {
                 templateUrl:"views/signin.html",
-                controller:"SimpleController"
+                controller:"MainController"
                })
          .when("/cartitemdetail/:gradeName/:subjectName", 
               {
@@ -28,6 +32,11 @@ utswApp.config(function($routeProvider) {
         .when("/cart", 
               {
                 templateUrl:"views/showcart.html",
+                controller:"SimpleController"
+               })
+        .when("/shopping", 
+              {
+                templateUrl:"templates/storeshelf.html",
                 controller:"SimpleController"
                })
         .otherwise({redirectTo:"/"});
