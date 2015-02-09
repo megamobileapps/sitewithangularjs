@@ -19,7 +19,7 @@
 					   <div ng-repeat="storeItem in storeItems" 
 						   ng-class="{'active':'tab-pane fade in active', '':'tab-pane fade'}[storeItem.isselected]" 
 						   id="{{storeItem.gradename}}" 
-							role="tabpanel">
+							role="tabpanel" ng-init="currrentSubjectItem.gradeName=storeItem.gradename">
 							<cart-item-tab-data> </cart-item-tab-data>
 						</div>
 				</div>
@@ -27,6 +27,6 @@
 		</div>
 	</div>
 	<div class="col-sm-2">
-		<h1> Area for advertisements</h1>
+		<h6> Area for advertisements</h6>
 	</div>
 </div>
