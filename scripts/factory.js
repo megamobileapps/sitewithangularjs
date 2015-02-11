@@ -8,20 +8,33 @@ utswApp.factory("SimpleFactory", ['$http', '$rootScope', '$templateCache',functi
 	var srvc=this; 
 
     factory.getStoreData = function(refresh) {
-			return $http({method: "GET", 
+		return $http({method: "GET", 
 				url: newSitePath+"mobile/getops.php?useraction=showpricelist&printed=1", 
 				cache: true});
     }
     factory.getTopics = function(subId) {
 		return $http({method: "GET",
-					url: newSitePath+"mobile/getops.php?useraction=showtopiclist&subid="+subId, 
-					 cache: true});
+				url: newSitePath+"mobile/getops.php?useraction=showtopiclist&subid="+subId, 
+				cache: true});
 	}
    
     factory.getFreeWs = function(gradeId, subId) {
 		return $http({method: "GET",
-					url: newSitePath+"mobile/getops.php?useraction=listfreews&gradeid="+gradeId+"&subid="+subId, 
-					 cache: true});
+				url: newSitePath+"mobile/getops.php?useraction=listfreews&gradeid="+gradeId+"&subid="+subId, 
+				cache: true});
+	}
+    
+	factory.getSubWs = function(subId) {
+		return $http({method: "GET",
+				url: newSitePath+"mobile/getops.php?useraction=listws&subid="+subId, 
+				cache: true});
+	}
+
+	factory.getPayhistory=function(){
+		return $http({method: "GET",
+				url: newSitePath+"mobile/getops.php?useraction=getprofile", 
+				cache: true});
+		
 	}
     
     factory.getCart = function() {
@@ -31,3 +44,4 @@ utswApp.factory("SimpleFactory", ['$http', '$rootScope', '$templateCache',functi
     return factory;
 
 }]);
+

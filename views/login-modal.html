@@ -1,6 +1,7 @@
 <!-- Button trigger modal -->
 <!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" 
+	aria-labelledby="myModalLabel" aria-hidden="true" >
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -19,14 +20,20 @@
                    </div>
                     
                         <button type="submit" class="btn btn-primary" value="st_login">Login</button>
-                        <button type="submit" class="btn btn-primary" value="fb_login">Facebook Login</button>
+						<!--<fb app-id='150225251769346'></fb>-->
+                       	<button type="submit" class="btn btn-primary" 
+							data-ng-show="!facebook_logged" data-ng-disabled="!facebookReady"
+							value="fb_login" ng-click="facebook_login()">Facebook Login</button>
+                       	<button type="submit" class="btn btn-danger" 
+							data-ng-show="facebook_logged" data-ng-disabled="!facebookReady"
+							value="fb_login" ng-click="facebook_logout()">Facebook Logout</button>
                         <button type="submit" class="btn btn-primary" value="gp_login">Google Login</button>
-                        <a href="#" class="btn btn-primary">Register</a>
+                        <a href="#" class="btn btn-primary" ng-click="showRegForm=!showRegForm">Register</a>
                     
                 </fieldset>
             </form>
             
-            <form role="form">
+            <form role="form" ng-show="showRegForm">
                 <fieldset >
                     <div class="form-group">
                         <input class="input span5  form-control" type="text" placeholder="username">

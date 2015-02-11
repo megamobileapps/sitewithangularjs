@@ -2,14 +2,15 @@
 <div class="panel panel-default">
    <div class="panel-heading">
        <a href="{{storeItem.gradeurl}}">{{storeItem.gradename}}</a>
-       Subjects: <select ng-model="selectedItem" 
+       Subjects: <select ng-model="selectedSubject" 
             ng-options="item as item.name for item in  storeItem.subjects">
             </select>
    </div>
    <div class="panel-body">
        <p>{{storeItem.gradedescription}}</p>
-       <div ng-repeat="subject in storeItem.subjects|filter:selectedItem" 
+       <div ng-repeat="subject in storeItem.subjects|filter:selectedSubject" 
 			class="col-sm-4 pull-left">
+			<div ng-init="currrentSubjectItem.gradeName=storeItem.gradename"></div>
 			 <div class="ng-include" src="'views/subjectdetails.html'"></div>
        </div>
 	</div>

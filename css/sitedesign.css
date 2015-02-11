@@ -1,3 +1,6 @@
+.vertical-line {
+    border-left: thick solid #ff0000;
+}
 .vertical-text {
 	transform: rotate(90deg);
 	transform-origin: left top 0;

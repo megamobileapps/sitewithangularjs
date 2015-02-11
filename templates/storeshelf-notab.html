@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-lg-10">
+			<div class="col-xs-2 bg-danger" role="navigation">
+				<ul class="nav nav-pills nav-stacked">
+				  <li role="presentation" data-ng-repeat="storeItem in storeItems" 
+					ng-class="{active:storeItem.isselected=='active'}"  >
+					  	<a ng-click="selectItem(storeItem)" 
+							ng-href="#/shopping/{{storeItem.gradename}}">{{storeItem.gradename}}
+					  	</a>
+				  </li>
+				</ul>
+			</div>
+			<div class="col-xs-10 bg-info" ng-init="storeItem=storeItems[0]">
+				<div ui-view="">
+					<div class="ng-include" src="'views/viewmain.html'"></div>
+				</div>
+			</div>
+	</div>
+	<div class="col-lg-2">
+		<h6> Area for advertisements</h6>
+	</div>
+</div>

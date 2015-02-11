@@ -11,8 +11,8 @@
           </button>
 			<ul class="nav pull-left">
 				<!-- This works well for static text, like a username -->
-				<li ng-if="username" class="navbar-text pull-left">{{username}}</li>
-				<li ng-if="!username" class="navbar-text pull-left">
+				<li ng-if="user.name" class="navbar-text pull-left">{{user.name}}</li>
+				<li ng-if="!user.name" class="navbar-text pull-left">
 				<a href="#" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span>Login</a>
 				</li>
 				<!-- Add any additional bootstrap header items.  This is a drop-down from an icon -->
@@ -23,13 +23,13 @@
 				  </a>
 				  <ul class="dropdown-menu">
 					<li>
-					  <a ng-href="#/users/id/worksheets" title="worksheets">MyWorksheets</a>
+					  <a ng-href="#/myworksheets" title="worksheets">MyWorksheets</a>
 					</li>
 					<li>
-					  <a ng-href="#/users/id" title="Profile">Profile</a>
+					  <a ng-href="#/profile" title="Profile">Profile</a>
 					</li>
 					<li>
-					  <a ng-href="#/logout" title="Logout">Logout </a>
+					  <a ng-href="#/logout" title="Logout" ng-click="logout()">Logout </a>
 					</li>
 				  </ul>
 				</li>
@@ -88,7 +88,7 @@
         <!-- /.navbar-collapse --> 
     </div>
 </script>
-<div class="row">
+<div class="row" ng-controller="MainController">
     <div class="col-lg-2 col-xs-2"> 
     	<img src="http://www.uptoschoolworksheets.com/in/images/starlogo2.png"><br > 
     	<span >Little brains <br> ...thinking big </span>
@@ -109,4 +109,3 @@
     	</div>
     </div> <!-- col-8 -->
 </div>
-<div data-ng-view=""  class="row" onload="onViewLoad()"> </div>

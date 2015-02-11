@@ -4,30 +4,30 @@
         <ul class="list-group">
          	<li ng-if="subject.cost" class="btn btn-primary  list-group-item"
               ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost, 1, 'online-12M')"
-              ><small>1 Year: {{subject.cost|currency:"Rs ":0}}</small>
+              ><small>1 Year: {{subject.cost|currency:"Rs ":0}}</small><br/>
 			    <div class="btn btn-danger nopadding ">
-					<small>Add To Cart<small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+					<small>Add To Cart</small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				</div>
 			</li>
          	<li  ng-if="subject.cost6" class="btn btn-primary  list-group-item"
               ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost6, 1, 'online-6M')"
-              ><small>6 Month: {{subject.cost6|currency:"Rs ":0}}</small>
+              ><small>6 Month: {{subject.cost6|currency:"Rs ":0}}</small><br/>
 			    <div class="btn btn-danger nopadding "> 
-					<small>Add To Cart<small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+					<small>Add To Cart</small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				</div>
 			</li>
          	<li  ng-if="subject.cost3" class="btn btn-primary list-group-item" 
               ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost3, 1, 'online-3M')"
-              ><small>3 Month: {{subject.cost3|currency:"Rs ":0}}</small>
+              ><small>3 Month: {{subject.cost3|currency:"Rs ":0}}</small><br/>
 			    <div class="btn btn-danger nopadding ">
-					<small>Add To Cart<small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+					<small>Add To Cart</small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				</div>
 			</li>
         	<li  ng-if="subject.cost1" class="btn btn-primary list-group-item" 
               ng-click="cart.addItem(subject.subjectid, subject.name, subject.cost1, 1, 'online-1M')"
-              ><small>1 Month: {{subject.cost1|currency:"Rs ":0}} </small>
+              ><small>1 Month: {{subject.cost1|currency:"Rs ":0}} </small><br/>
 			    <div class="btn btn-danger nopadding "> 
-					<small>Add To Cart<small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+					<small>Add To Cart</small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				</div>
 			</li>
         </ul>
@@ -37,9 +37,9 @@
         <ul class="list-group">
         	<li ng-if="subject.hasprintrate" class="btn btn-primary  list-group-item"
               ng-click="cart.addItem(subject.buycodep, subject.name, subject.costp, 1, 'printed')"
-              ><small>Printed:{{subject.costp|currency:"Rs ":0}}</small>
+              ><small>Printed:{{subject.costp|currency:"Rs ":0}}</small><br/>
 			    <div class="btn btn-danger nopadding "> 
-					<small>Add To Cart<small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
+					<small>Add To Cart</small><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 				</div>
 			</li>
         </ul>
